@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+
+
+    <div class="container d-flex flex-column align-items-center ">
+
+        <div class="logo d-flex align-items-center">
+            <img src="image/download.png" alt="">
+            <div class="title">Alarm</div>
+        </div>
+
+        <div class="content">
+            <div class="left">
+                <div class="box">
+
+                    <div class="time-now">
+                        <span class="time hour-now"></span>
+                        <span>:</span>
+                        <span class="time minute-now"></span>
+                        <span>:</span>
+                        <span class="time second-now"></span>
+                    </div>
+
+                    <div class="alarm">
+                        <span class="choose hour-choose">00</span>
+                        <span>:</span>
+                        <span class="choose minute-choose">00</span>
+                    </div>
+
+
+                    <div class="count w-100 d-flex align-items-center justify-content-around">
+                        <div class="hour d-flex align-items-center w-50 justify-content-center gap-1">
+                            <span class="decrease-hour">-</span>
+                            <span class="increase-hour">+</span>
+                        </div>
+                        <div class="min d-flex align-items-center w-50 justify-content-center gap-1">
+                            <span class="decrease-minute">-</span>
+                            <span class="increase-minute">+</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="btn text-light">SET ALARM</div>
+
+                <div class="result"></div>
+            </div>
+            <div class="right">
+                    <h3 class="description">Description</h3>
+                    <div class="mod">1 minute left</div>
+                    <div class="by-pm-am">5:3pm</div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- audio -->
+    <audio  src="sounds/music_test2_رنات الهاتف_نغمات-للمنبه_13.magical_alarm.mp3" class="audio"></audio>
+
+
+    <script src="js/all.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
