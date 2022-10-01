@@ -25,9 +25,9 @@ function checkMod(){
    if(minuteChoose.innerHTML -minuteNow.innerHTML <0 && hourChoose.innerHTML - hourNow.innerHTML <0 ){
       return `Enter Hours [${+hourNow.innerHTML }:${+minuteNow.innerHTML + 1}  =>  24]`
    }else if(minuteChoose.innerHTML -minuteNow.innerHTML <0 && hourChoose.innerHTML - hourNow.innerHTML >0){
-      return `${hourChoose.innerHTML - hourNow.innerHTML -1 } Hours and ${ 60 + +minuteChoose.innerHTML - minuteNow.innerHTML } Minutes`
+      return `${hourChoose.innerHTML - hourNow.innerHTML -1 } Hours and ${ 60 + +minuteChoose.innerHTML - minuteNow.innerHTML } Minutes Left`
    }else{
-      return `${hourChoose.innerHTML - hourNow.innerHTML} Hours and ${ +minuteChoose.innerHTML - minuteNow.innerHTML } Minutes`
+      return `${hourChoose.innerHTML - hourNow.innerHTML} Hours and ${ +minuteChoose.innerHTML - minuteNow.innerHTML } Minutes Left`
    }
 }
 
@@ -155,10 +155,26 @@ decreaseMinute.addEventListener("click" , ()=>{
 btn.addEventListener("click" , ()=>{
    
    result.classList.toggle("show")
+   let a;
+
+    // to function work
+   if(result.classList.contains("show")){
+
+      a=setInterval(()=>{
+               if( +hourChoose.innerHTML== +hourNow.innerHTML && +minuteChoose.innerHTML == +minuteNow.innerHTML){
+                     // function code 
+                     audio.play()
+                     console.log("ok")
+                     // stop setTimeOut
+                     clearInterval(a)
+               }
+            } , 500 )
+   }
 
    if(btn.innerHTML=="CANCEL"){
       btn.innerHTML="SET ALARM"
       result.innerHTML=""
+      // clearInterval(a)
       audio.pause()
    }else{
       btn.innerHTML="CANCEL"
@@ -166,33 +182,14 @@ btn.addEventListener("click" , ()=>{
    }
    
 
-   // to function work
-   if(result.classList.contains("show")){
-      // triger function check time 
-      let b=setInterval(()=>{
-         checkTime()
-         clearInterval(b)
-      })
-   }
+
    
 })
 
 
 
 
-// check time function
-function checkTime(){
 
-   let a=setTimeout(()=>{
-      if( +hourChoose.innerHTML== +hourNow.innerHTML && +minuteChoose.innerHTML == +minuteNow.innerHTML){
-            // function code 
-            audio.play()
-            // stop setTimeOut
-            clearTimeout(a)
-      }
-   } , 10)
-
-}
 
 
 
