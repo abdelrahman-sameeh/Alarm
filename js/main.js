@@ -164,7 +164,6 @@ btn.addEventListener("click" , ()=>{
                if( +hourChoose.innerHTML== +hourNow.innerHTML && +minuteChoose.innerHTML == +minuteNow.innerHTML){
                      // function code 
                      audio.play()
-                     console.log("ok")
                      // stop setTimeOut
                      clearInterval(a)
                }
