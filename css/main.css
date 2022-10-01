@@ -68,7 +68,7 @@ body::after{
 .left::after ,
 .left::before {
 	position: absolute;
-	top: 46%;
+	top: 99px;
 	font-size: 35px;
 }
 .left::after{
